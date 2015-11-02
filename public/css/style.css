@@ -1,0 +1,126 @@
+/* Main Page */
+
+.jumbotron {
+	margin: 0;
+	background-image: url('../img/bg.jpg');
+	background-size: cover;
+	color: #fff;
+	transition: all 1s ease;
+	padding-top: 0;
+}
+
+.content {
+	position: absolute;
+	top: 33%;
+}
+
+h1 {
+	font-family: 'source sans pro';
+	font-weight: bold;
+}
+
+.overlay {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: #333;
+	opacity: .5;
+	z-index: 0;
+}
+
+/* Utility Classes */
+
+.center {
+	text-align: center;
+}
+
+.margin-right {
+	margin-right: 10px;
+}
+
+.mr-top {
+	margin-top: 20px;
+}
+
+
+.margin-top-x {
+	margin-top: 100px;
+}
+
+.inline {
+	display: inline;
+}
+
+.icon {
+	font-size: 1.4em;
+	margin-top: 3px;
+}
+
+.lg {
+	font-size: 1.2em;
+	font-family: pacifico;
+}
+
+a .icon {
+	color: #fff;
+}
+
+span.block {
+	display: block;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.bg {
+	background-color: #eee;
+}
+
+/* Navigation */
+
+nav {
+	background: #2c3e50;
+	padding-top: 1.6em;
+	padding-bottom: 1.6em;
+
+	color: #fff;
+	font-family: 'source sans pro';
+}
+
+
+/* Card Styles */
+.card {
+	background-color: #3498db;
+	padding: 25px;
+	color: #fff;
+	border-radius: 10px;
+	border: 1px solid 
+	/* box-shadow: 2px 2px 2px #7f8c8d; */
+}
+
+.card h4 {
+	font-family: 'Bad Script';
+	font-size: 1.8em;
+	font-weight: bolder;
+	text-transform: capitalize;
+}
+
+.card p {
+	font-family: 'Bad Script';
+	font-size: 1.3em;
+}
+
+p.info {
+	padding-top: 10px;
+	padding-bottom: 8px;
+	font-size: 1.4em;
+}
+
+
+
+.message {
+	position: fixed;
+	top: 20px;
+	z-index: 1000;
+}

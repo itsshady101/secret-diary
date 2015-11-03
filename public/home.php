@@ -12,6 +12,11 @@
 	$nickname = $_SESSION["nickname"];
 	$user_id = $_SESSION["user_id"];
 
+
+
+	$query = "SELECT * from entries WHERE user_id = {$user_id}";
+	$result = mysqli_query($connection, $query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,15 +34,31 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 center">
-						<h3 class="inline"><?php echo $nickname;?>'s Awesome Story Beginning.</h3>
-						<a href="#"><span class="pull-right icon glyphicon glyphicon-cog"></span></a>
-						<a href="logout.php"><span class="pull-left icon glyphicon glyphicon-menu-hamburger"></span></a>
+						<h3 class="inline"><?php echo ucfirst($nickname);?>'s Awesome Story Beginning.</h3>
+						<a href="write.php"><span class="pull-right icon glyphicon glyphicon-pencil"></span></a>
+						<a href="logout.php"><span class="pull-left icon glyphicon glyphicon-off"></span></a>
 					</div> 
 				</div>
 			</div>
 		</nav>
 	</header>
 
+	<?php if(isset($_SESSION["message"]) && $_SESSION["message"] != "") { ?>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 center message">
+					<div class="alert alert-success alert-dismissible" role="alert">
+  						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  						<?php echo $_SESSION["message"]; ?>
+  						<?php $_SESSION["message"] = ""; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<?php } ?>
+	
 	<section>
 		<div class="container">
 				<div class="row">
@@ -55,6 +76,25 @@
 				</div>
 			</div>	
 	</section>
+	
+	<?php while( $data = mysqli_fetch_assoc($result) ) {  ?>
+	<section>
+		<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 mr-top card">
+						<h4 class="center"><?php echo $data["title"]; ?></h4>
+
+						<p class="align-left info"><u>Date: <?php echo $data["date"]; ?></u> <span class="pull-right"><u>Time: <?php echo $data["time"]; ?></u></span></p>
+
+						<p>Dear Diary,</b><?php echo $data["content"];?></p>
+						
+				
+	
+					</div>
+				</div>
+			</div>	
+	</section>
+	<?php } ?>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>

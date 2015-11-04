@@ -38,6 +38,10 @@ h1 {
 	margin-right: 10px;
 }
 
+.margin-right-x {
+	margin-right: 20px;
+}
+
 .mr-top {
 	margin-top: 20px;
 }
@@ -75,6 +79,10 @@ span.block {
 
 .bg {
 	background-color: #eee;
+}
+
+p.links a {
+	color: #fff;
 }
 
 /* Navigation */

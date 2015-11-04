@@ -35,7 +35,10 @@
 				<div class="row">
 					<div class="col-md-12 center">
 						<h3 class="inline"><?php echo ucfirst($nickname);?>'s Awesome Story Beginning.</h3>
-						<a href="write.php"><span class="pull-right icon glyphicon glyphicon-pencil"></span></a>
+						<a href="write.php"><span class="pull-right icon glyphicon glyphicon-pencil"></span>  </a>
+
+						<a href="edit_profile.php"><span class="pull-right icon glyphicon glyphicon-user margin-right-x"></span></a>
+
 						<a href="logout.php"><span class="pull-left icon glyphicon glyphicon-off"></span></a>
 					</div> 
 				</div>
@@ -71,10 +74,10 @@
 						
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi deleniti fugiat, commodi eum, repellat, dolorum numquam impedit voluptatem qui, amet illum officiis! Reiciendis mollitia nesciunt aperiam, esse tempora vel assumenda? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit obcaecati ratione quidem iure sapiente, omnis delectus. Saepe suscipit, a aperiam maiores nostrum libero iste temporibus. Fugiat a quibusdam necessitatibus obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas saepe iste velit pariatur, architecto exercitationem, facilis distinctio amet repellendus neque dicta accusantium ipsum cupiditate similique aut dolorum, voluptatum! Quasi, magni.</p>
 				
-	
+						<p class="links mr-top"><b><a href="#"><span class="glyphicon glyphicon-text-size"></span> Edit</a>	<a href="#"><span class="glyphicon glyphicon-trash"></span> Delete</a></b></p>
 					</div>
 				</div>
-			</div>	
+			</div>		
 	</section>
 	
 	<?php while( $data = mysqli_fetch_assoc($result) ) {  ?>
@@ -88,7 +91,8 @@
 
 						<p>Dear Diary,</b><?php echo $data["content"];?></p>
 						
-				
+						<p class="links mr-top"><b><a href="edit.php?id=<?php echo $data["id"]; ?> "><span class="glyphicon glyphicon-text-size"></span> Edit</a>	<a href="delete.php?id=<?php echo $data["id"]; ?>"><span class="glyphicon glyphicon-trash"></span> Delete</a></b></p>
+					
 	
 					</div>
 				</div>
